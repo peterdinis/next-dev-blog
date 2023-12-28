@@ -15,7 +15,7 @@ const Navbar: React.FC = () => {
                     <div className='flex items-center justify-between py-3 md:py-5 md:block'>
                         <Link href='/'>
                             <h2 className='text-xl text-black font-bold'>
-                                SPŠT Knižnica
+                                Dev Medium
                             </h2>
                         </Link>
                         <div className='md:hidden'>

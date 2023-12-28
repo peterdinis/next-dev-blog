@@ -10,6 +10,9 @@ const NavbarItems: FC = () => {
             <li className='text-black text-xl'>
                 <Link href='/posts'>Posts</Link>
             </li>
+            <li className='text-black text-xl'>
+                <Link href='/login'>Login</Link>
+            </li>
         </>
     );
 };
