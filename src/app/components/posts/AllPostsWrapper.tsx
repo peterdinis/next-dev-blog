@@ -1,12 +1,26 @@
-import { FC } from "react";
-import Header from "../shared/Header";
+import { FC } from 'react';
+import Header from '../shared/Header';
+import FrontBlog from '@/app/home/FrontBlog';
 
 const AllPostsWrapper: FC = () => {
     return (
         <>
-          <Header text="All Posts" />
+            <Header text='All Posts' />
+            <div className='rounded flex items-center w-full p-3 shadow-sm border border-gray-200'>
+                <input
+                    type='search'
+                    name=''
+                    placeholder='search for posts'
+                    className='w-full pl-4 text-sm outline-none focus:outline-none bg-transparent'
+                />
+            </div>
+
+            <div className='mt-6'>
+                {/* TODO: Spraviť pre toto podobný komponent */}
+                <FrontBlog />
+            </div>
         </>
-    )
-}
+    );
+};
 
 export default AllPostsWrapper;

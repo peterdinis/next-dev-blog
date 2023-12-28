@@ -1,11 +1,7 @@
-import { NextPage } from "next";
+import { NextPage } from 'next';
 
 const CreateNewPost: NextPage = () => {
-    return (
-        <>
-        
-        </>
-    )
-}
+    return <></>;
+};
 
 export default CreateNewPost;
