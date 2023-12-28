@@ -1,7 +1,14 @@
 import { NextPage } from 'next';
+import Hero from './home/Hero';
+import FrontBlog from './home/FrontBlog';
 
 const Homepage: NextPage = () => {
-    return <>abc</>;
+    return (
+       <>
+        <Hero />
+        <FrontBlog />
+       </>
+    )
 };
 
 export default Homepage;
