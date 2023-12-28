@@ -19,8 +19,14 @@ const Hero: FC = () => {
                             Application Name], Where Developers Thrive."
                         </p>
                         <div className='mt-5 flex'>
-                            <Button size={"lg"}>See all posts</Button> 
-                            <Button className='ml-3' size={"lg"} variant={"outline"}>Register has write</Button>
+                            <Button size={'lg'}>See all posts</Button>
+                            <Button
+                                className='ml-3'
+                                size={'lg'}
+                                variant={'outline'}
+                            >
+                                Register has write
+                            </Button>
                         </div>
                     </div>
                     <div className='w-full lg:w-6/12'>
