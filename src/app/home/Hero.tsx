@@ -15,8 +15,7 @@ const Hero: FC = () => {
                             Developer Excellence. Dive into a World of Insights,
                             Tutorials, and Innovations. Elevate Your Skills,
                             Craft Your Masterpieces, and Connect with a Global
-                            Community of Developers. Welcome to [Your Blog
-                            Application Name], Where Developers Thrive."
+                            Community of Developers. Welcome to [Dev Medium], Where Developers Thrive."
                         </p>
                         <div className='mt-5 flex'>
                             <Button size={'lg'}>See all posts</Button>
