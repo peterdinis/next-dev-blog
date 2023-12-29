@@ -1,24 +1,16 @@
 import { FC } from 'react';
 import { MoveRight } from 'lucide-react';
 import Link from 'next/link';
+import { PostCardProps } from '@/types/postTypes';
 
-interface IPostCardProps {
-    id?: number | string;
-    image: string;
-    imageAlt: string;
-    header: string;
-    timeRead: string;
-    postCreatedDate: string;
-}
-
-const PostCard: FC<IPostCardProps> = ({
+const PostCard: FC<PostCardProps> = ({
     id,
     image,
     header,
     timeRead,
     imageAlt,
     postCreatedDate,
-}: IPostCardProps) => {
+}: PostCardProps) => {
     return (
         <div className='hover:scale-125 transition-all duration-500 cursor-pointer lg:mt-10'>
             {' '}

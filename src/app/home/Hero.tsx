@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { FC } from 'react';
+import Link from 'next/link';
 
 const Hero: FC = () => {
     return (
@@ -19,13 +20,15 @@ const Hero: FC = () => {
                             Where Developers Thrive."
                         </p>
                         <div className='mt-5 flex'>
-                            <Button size={'lg'}>See all posts</Button>
+                            <Button size={'lg'}>
+                                <Link href='/posts'>See all posts</Link>
+                            </Button>
                             <Button
                                 className='ml-3'
                                 size={'lg'}
                                 variant={'outline'}
                             >
-                                Register here
+                                <Link href='/register'>Register here</Link>
                             </Button>
                         </div>
                     </div>
