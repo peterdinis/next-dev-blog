@@ -1,4 +1,4 @@
-import PostDetail from '@/app/components/posts/PostDetail';
+import PostDetail from '@/app/components/posts/PostDetailComponent';
 import { NextPage } from 'next';
 
 const PostDetailPage: NextPage = () => {

@@ -28,9 +28,11 @@ const PostCard: FC<PostCardProps> = ({
                     <p className='text-base font-medium leading-4 underline text-gray-800'>
                        {timeRead} read{' '}
                     </p>
+                    <div className='mt-4'>
                     <Link className="mt-8" href={`/post/${id}`}>
                         <Button variant={"ghost"} size={"lg"}>See Detail<MoveRight className='ml-4' />{' '}</Button>
                     </Link>
+                    </div>
                 </CardDescription>
             </CardContent>
         </Card>
