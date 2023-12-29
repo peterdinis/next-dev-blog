@@ -7,7 +7,7 @@ import { useToast } from '@/components/ui/use-toast';
 
 const LogoutBtn: FC = () => {
     const supabase = createClientComponentClient();
-    const {toast} = useToast();
+    const { toast } = useToast();
     async function handleSignOut() {
         const { error } = await supabase.auth.signOut();
 
@@ -16,10 +16,10 @@ const LogoutBtn: FC = () => {
         }
 
         toast({
-            title: "Logout was successfull",
-            className: "bg-green-400",
-            duration: 2000
-        })
+            title: 'Logout was successfull',
+            className: 'bg-green-400',
+            duration: 2000,
+        });
     }
 
     return (
