@@ -25,14 +25,14 @@ const Hero: FC = () => {
                                 size={'lg'}
                                 variant={'outline'}
                             >
-                                Register has write
+                                Register here
                             </Button>
                         </div>
                     </div>
                     <div className='w-full lg:w-6/12'>
                         <img
                             className='lg:block hidden w-full'
-                            src='https://i.ibb.co/RjNH7QB/Rectangle-122-1.png'
+                            src='https://static-00.iconduck.com/assets.00/web-developer-illustration-1004x1024-wcqgbag3.png'
                             alt='people discussing on board'
                         />
                     </div>
