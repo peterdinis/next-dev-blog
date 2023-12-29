@@ -2,7 +2,7 @@
 
 import { FC } from 'react';
 import Header from '../shared/Header';
-import FrontBlog from '@/app/home/FrontBlog';
+import FrontBlog from '@/app/components/posts/FrontPosts';
 import ScrollToTop from "react-scroll-to-top";
 
 const AllPostsWrapper: FC = () => {

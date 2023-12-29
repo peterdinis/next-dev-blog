@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
 import Hero from './home/Hero';
-import FrontBlog from './home/FrontBlog';
+import FrontBlog from './components/posts/FrontPosts';
 import Footer from './components/shared/Footer';
 
 const Homepage: NextPage = () => {
