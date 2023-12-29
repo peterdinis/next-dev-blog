@@ -4,11 +4,14 @@ import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { FC, useState } from 'react';
+import { useToast } from '@/components/ui/use-toast';
 import PostEditor from './PostEditor';
+import { Label } from '@/components/ui/label';
 
 const CreatePost: FC = () => {
     const [isOpen, setIsOpen] = useState(false);
-
+    const {toast} = useToast();
+    
     return (
         <Dialog
             open={isOpen}
@@ -36,13 +39,17 @@ const CreatePost: FC = () => {
                 <div className='mt-6'>
                     <Input type='text' placeholder='Post title' />
                     <div className='mt-3'>
+                        <Label>Post Description</Label>
                         <PostEditor />
                     </div>
                     <div className='mt-3'>
                         <Input type='text' placeholder='Post tag' />
                     </div>
                     <div className='mt-3'>
-                        <Input type='date' placeholder='Post Created' />
+                        <Input type='text'  placeholder='Post Created' />
+                    </div>
+                    <div className='p-2 mt-6'>
+                        <Button size="lg" variant="default">Create new post</Button>
                     </div>
                 </div>
             </DialogContent>
