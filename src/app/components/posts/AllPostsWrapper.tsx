@@ -1,9 +1,8 @@
-"use client"
+'use client';
 
 import { FC } from 'react';
 import Header from '../shared/Header';
-import FrontBlog from '@/app/components/posts/FrontPosts';
-import ScrollToTop from "react-scroll-to-top";
+import ScrollToTop from 'react-scroll-to-top';
 
 const AllPostsWrapper: FC = () => {
     return (
@@ -18,10 +17,7 @@ const AllPostsWrapper: FC = () => {
                 />
             </div>
 
-            <div className='mt-6'>
-                {/* TODO: Spraviť pre toto podobný komponent */}
-                <FrontBlog />
-            </div>
+            <div className='mt-6'></div>
             <ScrollToTop smooth={true} />
         </>
     );
