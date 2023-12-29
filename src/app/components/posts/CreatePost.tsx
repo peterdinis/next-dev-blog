@@ -41,6 +41,9 @@ const CreatePost: FC = () => {
                     <div className='mt-3'>
                         <Input type='text' placeholder='Post tag' />
                     </div>
+                    <div className='mt-3'>
+                        <Input type='date' placeholder='Post Created' />
+                    </div>
                 </div>
             </DialogContent>
         </Dialog>
