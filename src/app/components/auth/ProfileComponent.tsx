@@ -5,6 +5,8 @@ import { redirect } from 'next/navigation';
 import LogoutBtn from './LogoutBtn';
 import { Button } from '@/components/ui/button';
 import { format } from 'date-fns';
+import CreatePost from '../posts/CreatePost';
+import Link from 'next/link';
 
 const ProfileComponent: FC = async () => {
     const supabase = createServerComponentClient({ cookies });
@@ -36,11 +38,9 @@ const ProfileComponent: FC = async () => {
                 <div className='flex justify-center mt-5'>
                     <LogoutBtn />
                     <Button variant='ghost' size='lg'>
-                        My posts
+                        <Link href={`/posts/user/${user?.id}`}> My posts</Link>
                     </Button>
-                    <Button variant={'ghost'} size='lg'>
-                        Create Post
-                    </Button>
+                    <CreatePost />
                 </div>
                 <div className='mt-5'>
                     <h3 className='text-xl font-semibold'>

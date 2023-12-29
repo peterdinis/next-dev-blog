@@ -5,6 +5,7 @@ import Navbar from './components/navbar/Navbar';
 import AuthProvider from '@/supabase/Provider';
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
 import { cookies } from 'next/headers';
+import 'react-quill/dist/quill.snow.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
