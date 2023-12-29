@@ -136,7 +136,7 @@ const LoginComponent: FC = () => {
                         size='lg'
                         disabled={isLoading}
                     >
-                        {!isLoading ? 'Register' : <Loader2 />}
+                        {!isLoading ? 'Login' : <Loader2 />}
                     </Button>
                     <span className='self-container  dark:text-white'>
                         Already have an account?{' '}
