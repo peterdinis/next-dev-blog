@@ -56,7 +56,7 @@ const LoginComponent: FC = () => {
                 variant: 'default',
                 duration: 2000,
                 className: 'bg-green-300',
-                title: 'Successfully register to app',
+                title: 'Successfully login to app',
             });
             router.push('/profile');
         } catch (err) {
@@ -64,7 +64,7 @@ const LoginComponent: FC = () => {
                 variant: 'default',
                 duration: 2000,
                 className: 'bg-red-300',
-                title: 'register failed try again',
+                title: 'Login failed try again',
             });
             console.log(err);
         }
