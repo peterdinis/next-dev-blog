@@ -4,5 +4,4 @@ export type PostCardProps = {
     imageAlt: string;
     header: string;
     timeRead: string;
-    postCreatedDate: string;
 };
