@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import PostCard from './PostCad';
+import PostCard from './PostCard';
 
 const FrontPosts: FC = () => {
     return (
