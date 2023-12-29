@@ -1,4 +1,4 @@
-"use client"
+'use client';
 
 import { FC, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
@@ -12,7 +12,6 @@ import { Button } from '@/components/ui/button';
 import {
     Form,
     FormControl,
-    FormDescription,
     FormField,
     FormItem,
     FormMessage,
@@ -49,7 +48,7 @@ const RegisterComponent: FC = () => {
                 email: formData.email,
                 password: formData.password,
             });
-            if(error) {
+            if (error) {
                 console.log(error);
             }
             toast({
@@ -72,87 +71,81 @@ const RegisterComponent: FC = () => {
 
     return (
         <div className='min-h-full flex justify-center align-top dark:bg-[#1F1F1F]'>
-        <Form {...form}>
-            <form
-                onChange={() => {
-                    if (submitError) setSubmitError('');
-                }}
-                onSubmit={form.handleSubmit(onSubmit)}
-                className='w-full sm:justify-center sm:w-[400px] space-y-6 flex flex-col'
-            >
-                <Link
-                    href='/'
-                    className='
+            <Form {...form}>
+                <form
+                    onChange={() => {
+                        if (submitError) setSubmitError('');
+                    }}
+                    onSubmit={form.handleSubmit(onSubmit)}
+                    className='w-full sm:justify-center sm:w-[400px] space-y-6 flex flex-col'
+                >
+                    <Link
+                        href='/'
+                        className='
         w-full
         flex
         justify-left
         items-center'
-                >
-                    <span
-                        className='font-semibold
-        dark:text-white text-4xl first-letter:ml-2'
                     >
-                        Notion
-                    </span>
-                </Link>
-                <FormDescription
-                    className='
-      text-foreground/60  dark:text-white'
-                >
-                    An all-In-One Collaboration and Productivity Platform
-                </FormDescription>
-                <FormField
-                    disabled={isLoading}
-                    control={form.control}
-                    name='email'
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormControl>
-                                <Input
-                                    type='email'
-                                    placeholder='Email'
-                                    {...field}
-                                />
-                            </FormControl>
-                            <FormMessage />
-                        </FormItem>
-                    )}
-                />
-                <FormField
-                    disabled={isLoading}
-                    control={form.control}
-                    name='password'
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormControl>
-                                <Input
-                                    type='password'
-                                    placeholder='Password'
-                                    {...field}
-                                />
-                            </FormControl>
-                            <FormMessage />
-                        </FormItem>
-                    )}
-                />
-                {submitError && <FormMessage>{submitError}</FormMessage>}
-                <Button
-                    type='submit'
-                    className='w-full p-6'
-                    size='lg'
-                    disabled={isLoading}
-                >
-                    {!isLoading ? 'Register' : <Loader2 />}
-                </Button>
-                <span className='self-container  dark:text-white'>
-                    Already have an account?{' '}
-                    <Link href='/login' className='text-primary'>
-                        Login
+                        <span
+                            className='font-semibold
+        dark:text-white text-4xl first-letter:ml-2'
+                        >
+                            Register
+                        </span>
                     </Link>
-                </span>
-            </form>
-        </Form>
-    </div>
+                    <FormField
+                        disabled={isLoading}
+                        control={form.control}
+                        name='email'
+                        render={({ field }) => (
+                            <FormItem>
+                                <FormControl>
+                                    <Input
+                                        type='email'
+                                        placeholder='Email'
+                                        {...field}
+                                    />
+                                </FormControl>
+                                <FormMessage />
+                            </FormItem>
+                        )}
+                    />
+                    <FormField
+                        disabled={isLoading}
+                        control={form.control}
+                        name='password'
+                        render={({ field }) => (
+                            <FormItem>
+                                <FormControl>
+                                    <Input
+                                        type='password'
+                                        placeholder='Password'
+                                        {...field}
+                                    />
+                                </FormControl>
+                                <FormMessage />
+                            </FormItem>
+                        )}
+                    />
+                    {submitError && <FormMessage>{submitError}</FormMessage>}
+                    <Button
+                        type='submit'
+                        className='w-full p-6'
+                        size='lg'
+                        disabled={isLoading}
+                    >
+                        {!isLoading ? 'Register' : <Loader2 />}
+                    </Button>
+                    <span className='self-container  dark:text-white'>
+                        Already have an account?{' '}
+                        <Link href='/login' className='text-primary'>
+                            Login
+                        </Link>
+                    </span>
+                </form>
+            </Form>
+        </div>
     );
 };
 
