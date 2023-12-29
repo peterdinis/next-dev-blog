@@ -1,31 +1,47 @@
-'use client';
+"use client"
 
-import { FC } from 'react';
-import Header from '../shared/Header';
+import { FC, useState } from 'react';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
+import Link from 'next/link';
+import { useToast } from '@/components/ui/use-toast';
+import { useRouter } from 'next/navigation';
+import { z } from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
 import { Button } from '@/components/ui/button';
-import { supabaseClient } from '@/supabase/setup';
-import { usePathname } from 'next/navigation';
+import {
+    Form,
+    FormControl,
+    FormDescription,
+    FormField,
+    FormItem,
+    FormMessage,
+} from '@/components/ui/form';
+import { Loader2 } from 'lucide-react';
+import { Input } from '@/components/ui/input';
+
+const SignUpSchema = z.object({
+    email: z.string().email('Invalid email'),
+    password: z.string(),
+});
 
 const LoginComponent: FC = () => {
-    const pathName = usePathname();
-
-    const handleLoginGithub = async () => {
-        await supabaseClient.auth.signInWithOAuth({
-            provider: 'github',
-            options: {
-                redirectTo: location.origin + '/auth/callback?next=' + pathName,
-            },
-        });
-    };
-
+    const { toast } = useToast();
+    const router = useRouter();
+    const [submitError, setSubmitError] = useState('');
+    const supabase = createClientComponentClient();
+    const form = useForm<z.infer<typeof SignUpSchema>>({
+        mode: 'onChange',
+        resolver: zodResolver(SignUpSchema),
+        defaultValues: {
+            email: '',
+            password: '',
+        },
+    });
+    
     return (
         <>
-            <Header text='Login' />
-            <div className='flex justify-center align-top mt-5'>
-                <Button onClick={handleLoginGithub} variant={'default'}>
-                    Login here
-                </Button>
-            </div>
+            
         </>
     );
 };
