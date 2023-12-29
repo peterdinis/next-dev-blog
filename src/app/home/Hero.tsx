@@ -21,14 +21,14 @@ const Hero: FC = () => {
                         </p>
                         <div className='mt-5 flex'>
                             <Button size={'lg'}>
-                                <Link href="/posts">See all posts</Link>
+                                <Link href='/posts'>See all posts</Link>
                             </Button>
                             <Button
                                 className='ml-3'
                                 size={'lg'}
                                 variant={'outline'}
                             >
-                                <Link href="/register">Register here</Link>
+                                <Link href='/register'>Register here</Link>
                             </Button>
                         </div>
                     </div>

@@ -1,10 +1,7 @@
-import { FC } from "react";
+import { FC } from 'react';
 
 const ProfileComponent: FC = () => {
-    return (
-        <>
-        </>
-    )
-}
+    return <></>;
+};
 
 export default ProfileComponent;

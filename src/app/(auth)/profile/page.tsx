@@ -2,7 +2,7 @@ import ProfileComponent from '@/app/components/auth/ProfileComponent';
 import { NextPage } from 'next';
 
 const ProfilePage: NextPage = () => {
-    return <ProfileComponent />
+    return <ProfileComponent />;
 };
 
 export default ProfilePage;
