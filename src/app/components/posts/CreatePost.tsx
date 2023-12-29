@@ -34,12 +34,12 @@ const CreatePost: FC = () => {
                     Add new post
                 </h1>
                 <div className='mt-6'>
-                    <Input type="text" placeholder='Post title' />
+                    <Input type='text' placeholder='Post title' />
                     <div className='mt-3'>
                         <PostEditor />
                     </div>
                     <div className='mt-3'>
-                    <Input type="text" placeholder='Post tag' />
+                        <Input type='text' placeholder='Post tag' />
                     </div>
                 </div>
             </DialogContent>

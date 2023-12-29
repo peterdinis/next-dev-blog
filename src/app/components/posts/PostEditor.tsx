@@ -1,19 +1,15 @@
-import { FC } from "react";
-import { EditorProvider, FloatingMenu, BubbleMenu } from '@tiptap/react'
-import StarterKit from '@tiptap/starter-kit'
+"use client"
 
-const extensions = [
-    StarterKit,
-  ]
-  
-  const content = '<p>Hello World!</p>'
+import { FC, useState } from "react";
+import ReactQuill from 'react-quill';
 
 const PostEditor: FC = () =>{
+    const [value, setValue] = useState('');
+
     return (
-        <EditorProvider extensions={extensions} content={content}>
-        <FloatingMenu>This is the floating menu</FloatingMenu>
-        <BubbleMenu>This is the bubble menu</BubbleMenu>
-      </EditorProvider>
+        <>
+        <ReactQuill theme="snow" value={value} onChange={setValue} />
+        </>
     )
 }
 
