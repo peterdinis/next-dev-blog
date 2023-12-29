@@ -1,9 +1,8 @@
-import MyPosts from "@/app/components/posts/MyPosts";
-import { NextPage } from "next";
+import MyPosts from '@/app/components/posts/MyPosts';
+import { NextPage } from 'next';
 
 const MyPostsPage: NextPage = () => {
-    return <MyPosts />
-}
-
+    return <MyPosts />;
+};
 
 export default MyPostsPage;

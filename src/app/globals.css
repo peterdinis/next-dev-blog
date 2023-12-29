@@ -25,6 +25,9 @@ html::-webkit-scrollbar-track {
     background: linear-gradient(90deg, #434343, #434343 1px, #111 0, #111);
 }
 
+.checkbox:checked + .check-icon {
+    display: flex;
+}
 
 @layer base {
     :root {

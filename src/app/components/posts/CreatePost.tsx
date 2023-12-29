@@ -10,8 +10,8 @@ import { Label } from '@/components/ui/label';
 
 const CreatePost: FC = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const {toast} = useToast();
-    
+    const { toast } = useToast();
+
     return (
         <Dialog
             open={isOpen}
@@ -46,10 +46,12 @@ const CreatePost: FC = () => {
                         <Input type='text' placeholder='Post tag' />
                     </div>
                     <div className='mt-3'>
-                        <Input type='text'  placeholder='Post Created' />
+                        <Input type='text' placeholder='Post Created' />
                     </div>
                     <div className='p-2 mt-6'>
-                        <Button size="lg" variant="default">Create new post</Button>
+                        <Button size='lg' variant='default'>
+                            Create new post
+                        </Button>
                     </div>
                 </div>
             </DialogContent>
