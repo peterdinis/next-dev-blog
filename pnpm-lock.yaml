@@ -35,6 +35,9 @@ dependencies:
     clsx:
         specifier: ^2.0.0
         version: 2.0.0
+    date-fns:
+        specifier: ^3.0.6
+        version: 3.0.6
     lucide-react:
         specifier: ^0.303.0
         version: 0.303.0(react@18.2.0)
@@ -1752,6 +1755,13 @@ packages:
                 integrity: sha512-sdQSFB7+llfUcQHUQO3+B8ERRj0Oa4w9POWMI/puGtuf7gFywGmkaLCElnudfTiKZV+NvHqL0ifzdrI8Ro7ESA==,
             }
         dev: true
+
+    /date-fns@3.0.6:
+        resolution:
+            {
+                integrity: sha512-W+G99rycpKMMF2/YD064b2lE7jJGUe+EjOES7Q8BIGY8sbNdbgcs9XFTZwvzc9Jx1f3k7LB7gZaZa7f8Agzljg==,
+            }
+        dev: false
 
     /debug@3.2.7:
         resolution:
