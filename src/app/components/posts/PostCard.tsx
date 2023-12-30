@@ -12,15 +12,12 @@ import {
 import { Button } from '@/components/ui/button';
 const PostCard: FC<PostCardProps> = ({
     id,
-    image,
     header,
     timeRead,
-    imageAlt,
 }: PostCardProps) => {
     return (
         <Card>
             <CardHeader>
-                <img src={image} alt={imageAlt} />
                 <CardTitle>{header}</CardTitle>
             </CardHeader>
             <CardContent>
