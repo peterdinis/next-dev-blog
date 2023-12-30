@@ -10,21 +10,21 @@ import {
     CardTitle,
 } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-const PostCard: FC<PostCardProps> = ({
+import { Badge } from '@/components/ui/badge';
+
+const FrontPostCard: FC<PostCardProps> = ({
     id,
-    header,
-    timeRead,
+    title,
+    tag,
 }: PostCardProps) => {
     return (
         <Card>
             <CardHeader>
-                <CardTitle>{header}</CardTitle>
+                <CardTitle>{title}</CardTitle>
             </CardHeader>
             <CardContent>
                 <CardDescription>
-                    <p className='text-base font-medium leading-4 underline text-gray-800'>
-                        {timeRead} read{' '}
-                    </p>
+                    <Badge variant={'default'}>{tag}</Badge>
                     <div className='mt-4'>
                         <Link className='mt-8' href={`/post/${id}`}>
                             <Button variant={'ghost'} size={'lg'}>
@@ -39,4 +39,4 @@ const PostCard: FC<PostCardProps> = ({
     );
 };
 
-export default PostCard;
+export default FrontPostCard;

@@ -1,22 +1,38 @@
 'use client';
 
-import { FC } from 'react';
+import { FC, useState, useEffect } from 'react';
+import { createBrowserClient } from '@supabase/ssr';
 import Header from '../shared/Header';
 import ScrollToTop from 'react-scroll-to-top';
-import PostCard from './PostCard';
-import { createBrowserClient } from '@supabase/ssr';
 
 const AllPostsWrapper: FC = async () => {
-    const supabase = createBrowserClient(
-        process.env.NEXT_PUBLIC_SUPABASE_URL!,
-        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    );
+    const [frontPosts, setFrontPosts] = useState<FrontdPostMapping[]>([]);
 
-    let { data: posts, error } = await supabase.from('posts').select('*');
+    useEffect(() => {
+        const fetchFrontPosts = async () => {
+            const supabase = createBrowserClient(
+                process.env.NEXT_PUBLIC_SUPABASE_URL!,
+                process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+            );
 
-    console.log(posts);
+            try {
+                const { data, error } = await supabase
+                    .from('posts')
+                    .select('*');
+                if (error) {
+                    throw error;
+                }
 
-    console.log(error);
+                if (data) {
+                    setFrontPosts(data);
+                }
+            } catch (error) {
+                console.error('Error fetching front posts:', error);
+            }
+        };
+
+        fetchFrontPosts();
+    }, []);
 
     return (
         <>
@@ -33,7 +49,7 @@ const AllPostsWrapper: FC = async () => {
             <div className='mt-6'>
                 <div className='flex-col items-center justify-center  px-4'>
                     <div className='2xl:container 2xl:mx-auto flex flex-wrap items-start justify-center pt-6 gap-6'>
-                        <div className='flex lg:flex-col sm:flex-row flex-col items-start lg:gap-0 gap-6 lg:w-96 w-auto'>
+                        {/* <div className='flex lg:flex-col sm:flex-row flex-col items-start lg:gap-0 gap-6 lg:w-96 w-auto'>
                             <PostCard
                                 imageAlt={'t'}
                                 header={'t'}
@@ -44,31 +60,9 @@ const AllPostsWrapper: FC = async () => {
                                 header={'t'}
                                 timeRead={'3min'}
                             />
-                        </div>
-                        <div className='flex lg:flex-col sm:flex-row flex-col items-start lg:gap-0 gap-6 lg:w-96 w-auto'>
-                            <PostCard
-                                imageAlt={'t'}
-                                header={'t'}
-                                timeRead={'3min'}
-                            />
-                            <PostCard
-                                imageAlt={'t'}
-                                header={'t'}
-                                timeRead={'3min'}
-                            />
-                        </div>
-                        <div className='flex xl:flex-col sm:flex-row flex-col items-start xl:gap-0 gap-6 xl:w-96 w-auto'>
-                            <PostCard
-                                imageAlt={'t'}
-                                header={'t'}
-                                timeRead={'3min'}
-                            />
-                            <PostCard
-                                imageAlt={'t'}
-                                header={'t'}
-                                timeRead={'3min'}
-                            />
-                        </div>
+                        </div> */}
+
+                        {front}
                     </div>
                 </div>
             </div>
