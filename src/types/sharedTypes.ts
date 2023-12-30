@@ -8,3 +8,8 @@ export type AuthProviderProps = {
     accessToken: string;
     children: ReactNode;
 };
+
+export type GlobalErrorProps = {
+    statusCode: string;
+    message: string;
+}
