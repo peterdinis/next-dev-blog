@@ -1,3 +1,5 @@
+"use client"
+
 import { FC, useState, useEffect } from 'react';
 import { createBrowserClient } from '@supabase/ssr';
 import { FrontdPostMapping } from '@/types/postTypes';
