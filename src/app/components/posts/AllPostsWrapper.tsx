@@ -1,11 +1,39 @@
 'use client';
 
-import { FC } from 'react';
+import { FC, useState, useEffect } from 'react';
+import { createBrowserClient } from '@supabase/ssr';
 import Header from '../shared/Header';
 import ScrollToTop from 'react-scroll-to-top';
-import PostCard from './PostCard';
 
-const AllPostsWrapper: FC = () => {
+const AllPostsWrapper: FC = async () => {
+    const [frontPosts, setFrontPosts] = useState<FrontdPostMapping[]>([]);
+
+    useEffect(() => {
+        const fetchFrontPosts = async () => {
+            const supabase = createBrowserClient(
+                process.env.NEXT_PUBLIC_SUPABASE_URL!,
+                process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+            );
+
+            try {
+                const { data, error } = await supabase
+                    .from('posts')
+                    .select('*');
+                if (error) {
+                    throw error;
+                }
+
+                if (data) {
+                    setFrontPosts(data);
+                }
+            } catch (error) {
+                console.error('Error fetching front posts:', error);
+            }
+        };
+
+        fetchFrontPosts();
+    }, []);
+
     return (
         <>
             <Header text='All Posts' />
@@ -21,54 +49,20 @@ const AllPostsWrapper: FC = () => {
             <div className='mt-6'>
                 <div className='flex-col items-center justify-center  px-4'>
                     <div className='2xl:container 2xl:mx-auto flex flex-wrap items-start justify-center pt-6 gap-6'>
-                        <div className='flex lg:flex-col sm:flex-row flex-col items-start lg:gap-0 gap-6 lg:w-96 w-auto'>
+                        {/* <div className='flex lg:flex-col sm:flex-row flex-col items-start lg:gap-0 gap-6 lg:w-96 w-auto'>
                             <PostCard
-                                image={'https://picsum.photos/200/300'}
                                 imageAlt={'t'}
                                 header={'t'}
                                 timeRead={'3min'}
-                                postCreatedDate={'t'}
                             />
                             <PostCard
-                                image={'https://picsum.photos/200/300'}
                                 imageAlt={'t'}
                                 header={'t'}
                                 timeRead={'3min'}
-                                postCreatedDate={'t'}
                             />
-                        </div>
-                        <div className='flex lg:flex-col sm:flex-row flex-col items-start lg:gap-0 gap-6 lg:w-96 w-auto'>
-                            <PostCard
-                                image={'https://picsum.photos/200/300'}
-                                imageAlt={'t'}
-                                header={'t'}
-                                timeRead={'3min'}
-                                postCreatedDate={'t'}
-                            />
-                            <PostCard
-                                image={'https://picsum.photos/200/300'}
-                                imageAlt={'t'}
-                                header={'t'}
-                                timeRead={'3min'}
-                                postCreatedDate={'t'}
-                            />
-                        </div>
-                        <div className='flex xl:flex-col sm:flex-row flex-col items-start xl:gap-0 gap-6 xl:w-96 w-auto'>
-                            <PostCard
-                                image={'https://picsum.photos/200/300'}
-                                imageAlt={'t'}
-                                header={'t'}
-                                timeRead={'3min'}
-                                postCreatedDate={'t'}
-                            />
-                            <PostCard
-                                image={'https://picsum.photos/200/300'}
-                                imageAlt={'t'}
-                                header={'t'}
-                                timeRead={'3min'}
-                                postCreatedDate={'t'}
-                            />
-                        </div>
+                        </div> */}
+
+                        {front}
                     </div>
                 </div>
             </div>
