@@ -4,6 +4,7 @@ import { FC, useState, useEffect } from 'react';
 import { createBrowserClient } from '@supabase/ssr';
 import Header from '../shared/Header';
 import ScrollToTop from 'react-scroll-to-top';
+import { FrontdPostMapping } from '@/types/postTypes';
 
 const AllPostsWrapper: FC = async () => {
     const [frontPosts, setFrontPosts] = useState<FrontdPostMapping[]>([]);
