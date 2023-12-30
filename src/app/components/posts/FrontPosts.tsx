@@ -1,7 +1,19 @@
 import { FC } from 'react';
 import PostCard from './PostCard';
+import { createClient } from '@supabase/supabase-js';
 
-const FrontPosts: FC = () => {
+const FrontPosts: FC = async () => {
+    const supabase = createClient(
+        process.env.NEXT_PUBLIC_SUPABASE_URL!,
+        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    );
+    
+let { data: posts, error } = await supabase
+.from('posts')
+.select('*')
+        
+console.log(posts);
+
     return (
         <div className='py-24 flex-col items-center justify-center  px-4'>
             <h1

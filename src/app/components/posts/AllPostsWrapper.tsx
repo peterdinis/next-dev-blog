@@ -4,8 +4,20 @@ import { FC } from 'react';
 import Header from '../shared/Header';
 import ScrollToTop from 'react-scroll-to-top';
 import PostCard from './PostCard';
+import { createBrowserClient } from '@supabase/ssr';
 
-const AllPostsWrapper: FC = () => {
+const AllPostsWrapper: FC = async () => {
+    const supabase = createBrowserClient(
+        process.env.NEXT_PUBLIC_SUPABASE_URL!,
+        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    );
+
+    let { data: posts, error } = await supabase.from('posts').select('*');
+
+    console.log(posts);
+
+    console.log(error);
+
     return (
         <>
             <Header text='All Posts' />
