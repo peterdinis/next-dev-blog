@@ -12,52 +12,16 @@ const FrontPosts: FC = () => {
             </h1>
             <div className='2xl:container 2xl:mx-auto flex flex-wrap items-start justify-center pt-6 gap-6'>
                 <div className='flex lg:flex-col sm:flex-row flex-col items-start lg:gap-0 gap-6 lg:w-96 w-auto'>
-                    <PostCard
-                        image={'https://picsum.photos/200/300'}
-                        imageAlt={'t'}
-                        header={'t'}
-                        timeRead={'3min'}
-                        postCreatedDate={'t'}
-                    />
-                    <PostCard
-                        image={'https://picsum.photos/200/300'}
-                        imageAlt={'t'}
-                        header={'t'}
-                        timeRead={'3min'}
-                        postCreatedDate={'t'}
-                    />
+                    <PostCard imageAlt={'t'} header={'t'} timeRead={'3min'} />
+                    <PostCard imageAlt={'t'} header={'t'} timeRead={'3min'} />
                 </div>
                 <div className='flex lg:flex-col sm:flex-row flex-col items-start lg:gap-0 gap-6 lg:w-96 w-auto'>
-                    <PostCard
-                        image={'https://picsum.photos/200/300'}
-                        imageAlt={'t'}
-                        header={'t'}
-                        timeRead={'3min'}
-                        postCreatedDate={'t'}
-                    />
-                    <PostCard
-                        image={'https://picsum.photos/200/300'}
-                        imageAlt={'t'}
-                        header={'t'}
-                        timeRead={'3min'}
-                        postCreatedDate={'t'}
-                    />
+                    <PostCard imageAlt={'t'} header={'t'} timeRead={'3min'} />
+                    <PostCard imageAlt={'t'} header={'t'} timeRead={'3min'} />
                 </div>
                 <div className='flex xl:flex-col sm:flex-row flex-col items-start xl:gap-0 gap-6 xl:w-96 w-auto'>
-                    <PostCard
-                        image={'https://picsum.photos/200/300'}
-                        imageAlt={'t'}
-                        header={'t'}
-                        timeRead={'3min'}
-                        postCreatedDate={'t'}
-                    />
-                    <PostCard
-                        image={'https://picsum.photos/200/300'}
-                        imageAlt={'t'}
-                        header={'t'}
-                        timeRead={'3min'}
-                        postCreatedDate={'t'}
-                    />
+                    <PostCard imageAlt={'t'} header={'t'} timeRead={'3min'} />
+                    <PostCard imageAlt={'t'} header={'t'} timeRead={'3min'} />
                 </div>
             </div>
         </div>

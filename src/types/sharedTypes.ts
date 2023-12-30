@@ -12,4 +12,4 @@ export type AuthProviderProps = {
 export type GlobalErrorProps = {
     statusCode: string;
     message: string;
-}
+};
