@@ -1,6 +1,4 @@
-"use client"
-
-  
+'use client';
 
 import { FC, useState, useEffect } from 'react';
 
@@ -10,112 +8,68 @@ import { FrontdPostMapping } from '@/types/postTypes';
 
 import FrontPostCard from './FrontPostCard';
 
-  
+const FrontPosts: FC = () => {
+    const [frontPosts, setFrontPosts] = useState<FrontdPostMapping[]>([]);
 
-const FrontPosts: FC = async () => {
+    useEffect(() => {
+        const fetchFrontPosts = async () => {
+            const supabase = createBrowserClient(
+                process.env.NEXT_PUBLIC_SUPABASE_URL!,
 
-    const [frontPosts, setFrontPosts] = useState<FrontdPostMapping[]>([]);
+                process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+            );
 
-  
+            try {
+                const { data, error } = await supabase
 
-    useEffect(() => {
+                    .from('posts')
 
-        const fetchFrontPosts = async () => {
+                    .select('*');
 
-            const supabase = createBrowserClient(
+                if (error) {
+                    throw error;
+                }
 
-                process.env.NEXT_PUBLIC_SUPABASE_URL!,
+                if (data) {
+                    setFrontPosts(data);
+                }
+            } catch (error) {
+                console.error('Error fetching front posts:', error);
+            }
+        };
 
-                process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+        fetchFrontPosts();
+    }, []);
 
-            );
-
-  
-
-            try {
-
-                const { data, error } = await supabase
-
-                    .from('posts')
-
-                    .select('*');
-
-                if (error) {
-
-                    throw error;
-
-                }
-
-  
-
-                if (data) {
-
-                    setFrontPosts(data);
-
-                }
-
-            } catch (error) {
-
-                console.error('Error fetching front posts:', error);
-
-            }
-
-        };
-
-  
-
-        fetchFrontPosts();
-
-    }, []);
-
-  
-
-    return (
-
-        <div className='py-24 flex-col items-center justify-center px-4'>
-
-            <h1
-
-                role='heading'
-
-                className='scroll-m-20 text-4xl text-center font-extrabold tracking-tight lg:text-5xl'
-
-            >
-
-                Our top posts
-
-            </h1>
-
-            <div className='2xl:container 2xl:mx-auto flex flex-wrap items-start justify-center pt-6 gap-6'>
-
-                {frontPosts &&
-
-                    frontPosts.map((item: FrontdPostMapping) => (
-
-                        <div className='flex lg:flex-col sm:flex-row flex-col items-start lg:gap-0 gap-6 lg:w-96 w-auto'>
-
-                            <FrontPostCard
-
-                                id={item.id}
-
-                                title={item.title}
-
-                                tag={item.tag}
-
-                            />
-
-                        </div>
-
-                    ))}
-
-            </div>
-
-        </div>
-
-    );
-
+    return (
+        <div className='py-24 flex-col items-center justify-center px-4'>
+                       {' '}
+            <h1
+                role='heading'
+                className='scroll-m-20 text-4xl text-center font-extrabold tracking-tight lg:text-5xl'
+            >
+                                Our top posts            {' '}
+            </h1>
+                       {' '}
+            <div className='2xl:container 2xl:mx-auto flex flex-wrap items-start justify-center pt-6 gap-6'>
+                               {' '}
+                {frontPosts &&
+                    frontPosts.map((item: FrontdPostMapping) => (
+                        <div className='flex lg:flex-col sm:flex-row flex-col items-start lg:gap-0 gap-6 lg:w-96 w-auto'>
+                                                       {' '}
+                            <FrontPostCard
+                                id={item.id}
+                                title={item.title}
+                                tag={item.tag}
+                            />
+                                                   {' '}
+                        </div>
+                    ))}
+                           {' '}
+            </div>
+                   {' '}
+        </div>
+    );
 };
-
-  
 
 export default FrontPosts;
