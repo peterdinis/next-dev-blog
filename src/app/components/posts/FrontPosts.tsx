@@ -43,31 +43,27 @@ const FrontPosts: FC = () => {
 
     return (
         <div className='py-24 flex-col items-center justify-center px-4'>
-                       {' '}
+            {' '}
             <h1
                 role='heading'
                 className='scroll-m-20 text-4xl text-center font-extrabold tracking-tight lg:text-5xl'
             >
-                                Our top posts            {' '}
-            </h1>
-                       {' '}
+                Our top posts{' '}
+            </h1>{' '}
             <div className='2xl:container 2xl:mx-auto flex flex-wrap items-start justify-center pt-6 gap-6'>
-                               {' '}
+                {' '}
                 {frontPosts &&
                     frontPosts.map((item: FrontdPostMapping) => (
                         <div className='flex lg:flex-col sm:flex-row flex-col items-start lg:gap-0 gap-6 lg:w-96 w-auto'>
-                                                       {' '}
+                            {' '}
                             <FrontPostCard
                                 id={item.id}
                                 title={item.title}
                                 tag={item.tag}
-                            />
-                                                   {' '}
+                            />{' '}
                         </div>
-                    ))}
-                           {' '}
-            </div>
-                   {' '}
+                    ))}{' '}
+            </div>{' '}
         </div>
     );
 };
