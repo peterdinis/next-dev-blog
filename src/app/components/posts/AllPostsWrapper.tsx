@@ -14,6 +14,7 @@ import FrontPostCard from './FrontPostCard';
 
 const AllPostsWrapper: FC = () => {
     const [frontPosts, setFrontPosts] = useState<FrontdPostMapping[]>([]);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         const fetchFrontPosts = async () => {
@@ -30,11 +31,17 @@ const AllPostsWrapper: FC = () => {
 
                     .select('*');
 
+                setLoading(true);
+
                 if (error) {
+                    setLoading(true);
                     throw error;
                 }
 
+                console.log(data);
+
                 if (data) {
+                    setLoading(false);
                     setFrontPosts(data);
                 }
             } catch (error) {
@@ -63,6 +70,7 @@ const AllPostsWrapper: FC = () => {
                     <div className='2xl:container 2xl:mx-auto flex flex-wrap items-start justify-center pt-6 gap-6'>
                         {' '}
                         {frontPosts &&
+                            loading === false &&
                             frontPosts.map((item: FrontdPostMapping) => (
                                 <div className='flex lg:flex-col sm:flex-row flex-col items-start lg:gap-0 gap-6 lg:w-96 w-auto'>
                                     {' '}
