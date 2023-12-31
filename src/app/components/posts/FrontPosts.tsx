@@ -54,14 +54,14 @@ const FrontPosts: FC = () => {
                 {' '}
                 {frontPosts &&
                     frontPosts.map((item: FrontdPostMapping) => (
-                        <div className='flex lg:flex-col sm:flex-row flex-col items-start lg:gap-0 gap-6 lg:w-96 w-auto'>
-                            {' '}
+                      /*   <div className='flex lg:flex-col sm:flex-row flex-col items-start lg:gap-0 gap-6 lg:w-96 w-auto'> */
+                          /*   {' '} */
                             <FrontPostCard
                                 id={item.id}
                                 title={item.title}
                                 tag={item.tag}
-                            />{' '}
-                        </div>
+                            />/* {' '} */
+                       /*  </div> */
                     ))}{' '}
             </div>{' '}
         </div>

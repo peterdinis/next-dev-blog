@@ -1,11 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import { FC, useState } from 'react';
 import Link from 'next/link';
 import NavbarItems from './NavbarItems';
 import { X, Menu } from 'lucide-react';
 
-const Navbar: React.FC = () => {
+const Navbar: FC = () => {
     const [navbar, setNavbar] = useState<Boolean>(false);
 
     return (
