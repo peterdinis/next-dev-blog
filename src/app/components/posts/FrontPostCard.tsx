@@ -26,7 +26,7 @@ const FrontPostCard: FC<PostCardProps> = ({
                 <CardDescription>
                     <Badge variant={'default'}>{tag}</Badge>
                     <div className='mt-4'>
-                        <Link className='mt-8' href={`/post/${id}`}>
+                        <Link className='mt-8' href={`/posts/${id}`}>
                             <Button variant={'ghost'} size={'lg'}>
                                 See Detail
                                 <MoveRight className='ml-4' />{' '}

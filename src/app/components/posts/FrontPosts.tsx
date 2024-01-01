@@ -1,27 +1,45 @@
+'use client';
+
 import { FC, useState, useEffect } from 'react';
+
 import { createBrowserClient } from '@supabase/ssr';
+
 import { FrontdPostMapping } from '@/types/postTypes';
+
 import FrontPostCard from './FrontPostCard';
+
+import { Loader2 } from 'lucide-react';
 
 const FrontPosts: FC = () => {
     const [frontPosts, setFrontPosts] = useState<FrontdPostMapping[]>([]);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         const fetchFrontPosts = async () => {
             const supabase = createBrowserClient(
                 process.env.NEXT_PUBLIC_SUPABASE_URL!,
+
                 process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
             );
 
             try {
                 const { data, error } = await supabase
+
                     .from('posts')
+
                     .select('*');
+
+                setLoading(true);
+
                 if (error) {
+                    setLoading(true);
                     throw error;
                 }
 
+                console.log(data);
+
                 if (data) {
+                    setLoading(false);
                     setFrontPosts(data);
                 }
             } catch (error) {
@@ -41,13 +59,16 @@ const FrontPosts: FC = () => {
                 Our top posts
             </h1>
             <div className='2xl:container 2xl:mx-auto flex flex-wrap items-start justify-center pt-6 gap-6'>
-                {frontPosts.map((item: FrontdPostMapping) => (
-                    <FrontPostCard
-                        id={item.id}
-                        title={item.title}
-                        tag={item.tag}
-                    />
-                ))}
+                {loading && <Loader2 className='h-4 w-4 animate-spin' />}
+                {frontPosts &&
+                    loading === false &&
+                    frontPosts.map((item: FrontdPostMapping) => (
+                        <FrontPostCard
+                            id={item.id}
+                            title={item.title}
+                            tag={item.tag}
+                        />
+                    ))}
             </div>
         </div>
     );
