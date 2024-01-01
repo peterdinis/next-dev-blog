@@ -38,8 +38,6 @@ const AllPostsWrapper: FC = () => {
                     throw error;
                 }
 
-                console.log(data);
-
                 if (data) {
                     setLoading(false);
                     setFrontPosts(data);
