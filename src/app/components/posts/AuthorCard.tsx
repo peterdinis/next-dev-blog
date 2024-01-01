@@ -15,10 +15,6 @@ const AuthorCard: FC<IAuthorCard> = ({ authorEmail }: IAuthorCard) => {
                             {' '}
                             {authorEmail}{' '}
                         </p>
-                        <p className='font-semibold text-gray-600 text-xs'>
-                            {' '}
-                            Editor{' '}
-                        </p>
                     </div>
                 </div>
                 <button

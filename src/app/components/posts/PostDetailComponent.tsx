@@ -6,6 +6,7 @@ import ScrollToTop from 'react-scroll-to-top';
 import AuthorCard from './AuthorCard';
 import { FrontdPostMapping } from '@/types/postTypes';
 import { createBrowserClient } from '@supabase/ssr';
+import { LoadingSpinner } from '../shared/Loader';
 
 const PostDetail: FC = () => {
     const [postDetail, setPostDetail] = useState<FrontdPostMapping>({});
@@ -22,7 +23,6 @@ const PostDetail: FC = () => {
         const fetchPostById = async () => {
             setLoading(true);
             try {
-                // Fetch the post by ID from the 'posts' table
                 const { data: post, error } = await supabase
                     .from('posts')
                     .select('*')
@@ -33,7 +33,6 @@ const PostDetail: FC = () => {
                     throw error;
                 }
 
-                // Update the post detail state with the fetched data
                 if (post) {
                     setLoading(false);
                     setPostDetail(post);
@@ -52,6 +51,9 @@ const PostDetail: FC = () => {
 
     return (
         <>
+            {loading === true && (
+                <LoadingSpinner className='bg-black h-10 w-10' />
+            )}
             {loading === false ? (
                 <>
                     <div className='mb-4 md:mb-0 w-full mx-auto relative'>
@@ -78,7 +80,11 @@ const PostDetail: FC = () => {
                             <p className='pb-6'>{postDetail.description}</p>
                         </div>
 
-                        <AuthorCard authorEmail={postDetail.author_email as unknown as string} />
+                        <AuthorCard
+                            authorEmail={
+                                postDetail.author_email as unknown as string
+                            }
+                        />
                     </div>
                 </>
             ) : null}
