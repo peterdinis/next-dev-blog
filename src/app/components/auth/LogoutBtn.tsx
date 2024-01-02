@@ -12,7 +12,11 @@ const LogoutBtn: FC = () => {
         const { error } = await supabase.auth.signOut();
 
         if (error) {
-            console.error('ERROR:', error);
+            toast({
+                title: error as unknown as string,
+                className: 'bg-red-400',
+                duration: 2000,
+            });
         }
 
         toast({
