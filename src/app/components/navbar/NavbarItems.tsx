@@ -8,6 +8,7 @@ const NavbarItems: FC = async () => {
     const supabase = createClientComponentClient();
 
     const { data } = await supabase.auth.getUser();
+    
     return (
         <>
             {!data?.user ? (
