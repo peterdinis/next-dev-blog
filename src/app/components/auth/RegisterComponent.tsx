@@ -53,7 +53,7 @@ const RegisterComponent: FC = () => {
                     variant: 'default',
                     duration: 2000,
                     className: 'bg-green-300',
-                    title: error as unknown as string
+                    title: error as unknown as string,
                 });
             }
             toast({

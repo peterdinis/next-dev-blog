@@ -53,7 +53,7 @@ const LoginComponent: FC = () => {
                     variant: 'default',
                     duration: 2000,
                     className: 'bg-red-300',
-                    title: error as unknown as string
+                    title: error as unknown as string,
                 });
             }
             router.push('/profile');
