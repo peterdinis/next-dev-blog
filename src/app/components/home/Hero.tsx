@@ -3,75 +3,66 @@ import { FC } from 'react';
 const Hero: FC = () => {
     return (
         <>
-            <div className='dark:bg-gray-900'>
-                <div className='flex flex-col lg:flex-row items-stretch justify-between lg:px-0 px-6 lg:py-20 py-8 2xl:mx-auto 2xl:container'>
-                    <div className='z-30 relative lg:w-1/2'>
-                        <div className='hidden dark:bg-gray-800 bg-gray-100 w-full lg:w-10/12 lg:h-full lg:flex justify-end items-center'>
-                            <div className='w-full lg:w-auto lg:-mr-32'>
-                                <img
-                                    src='https://i.ibb.co/YQjkqWr/juan-burgos-FIy-XGZ1q0mc-unsplash-1.png'
-                                    alt='image with decent chairs'
-                                    className='w-full relative z-30 lg:pl-20 px-6 py-14'
-                                />
-                            </div>
-                        </div>
-                        <div className='absolute top-0 dark:bg-gray-800 bg-gray-100 md:h-96 w-full hidden md:block lg:hidden'></div>
-                        <div className='w-full h-full lg:hidden'>
-                            <img
-                                src='https://i.ibb.co/YQjkqWr/juan-burgos-FIy-XGZ1q0mc-unsplash-1.png'
-                                alt='image with decent chairs'
-                                className='w-full relative z-30 lg:pl-20 md:px-6 py-5 md:py-14'
-                            />
-                        </div>
-                    </div>
-                    <div className='bg-gray-100 dark:bg-gray-800 lg:w-1/2 lg:ml-12 lg:p-14 p-8 flex items-center'>
-                        <div>
-                            <h1 className='dark:text-white md:w-8/12 lg:w-10/12 xl:8/12 2xl:w-8/12 w-full xl:text-6xl sm:text-5xl text-4xl font-semibold text-gray-800 capitalize'>
-                                Modern Interior Decor
-                            </h1>
-                            <p className='dark:text-gray-300 md:w-9/12 lg:w-11/12 xl:w-10/12 2xl:9/12 text-base leading-normal text-gray-600 mt-5'>
-                                Get inspired by our curated selection of
-                                luxiwood interiors. We hope get inspired to have
-                                luxiwood interior yourself. You’ll find tips
-                                here where you can buy a lot of cool
-                                furniture,decorations, plants, etc.
-                            </p>
-                            <button className='dark:bg-white dark:hover:bg-gray-400 dark:hover:text-gray-100 dark:text-gray-800 sm:w-auto w-full mt-8 text-base justify-between focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 focus:outline-none hover:bg-gray-700 font-medium leading-none text-white py-4 px-8 bg-gray-800 flex items-center'>
-                                Explore
-                                <div className='ml-2 mt-0.5'>
-                                    <svg
-                                        className='fill-stroke'
-                                        width='16'
-                                        height='16'
-                                        viewBox='0 0 16 16'
-                                        fill='none'
-                                        xmlns='http://www.w3.org/2000/svg'
-                                    >
-                                        <path
-                                            d='M3.33325 8H12.6666'
-                                            stroke='currentColor'
-                                            strokeLinecap='round'
-                                            strokeLinejoin='round'
-                                        />
-                                        <path
-                                            d='M10 10.6667L12.6667 8'
-                                            stroke='currentColor'
-                                            strokeLinecap='round'
-                                            strokeLinejoin='round'
-                                        />
-                                        <path
-                                            d='M10 5.33301L12.6667 7.99967'
-                                            stroke='currentColor'
-                                            strokeLinecap='round'
-                                            strokeLinejoin='round'
-                                        />
-                                    </svg>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+              <div className="bg-white relative pt-40 pb-20 lg:pt-44 dark:bg-gray-900">
+      <div className="relative xl:container m-auto px-6 md:px-12 lg:px-6">
+        <header className="text-center lg:text-left lg:mx-auto lg:w-7/12">
+          <h1 className="font-black text-blue-900 text-4xl sm:text-5xl md:text-6xl xl:text-7xl dark:text-white">
+            Run successful remote and <br className="lg:block hidden" />
+            <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 dark:from-blue-400 dark:to-cyan-300">
+              Hybrid teams
+            </span>
+            .
+          </h1>
+          <p className="text-gray-700 dark:text-gray-300">
+            DailyBot takes chat and collaboration to the next level: daily standups, team check-ins, surveys, kudos, best companion bot for your virtual watercooler, 1:1 intros, motivation tracking, and more.
+          </p>
+          <span className="block font-semibold text-gray-500 dark:text-gray-400">The best companion bot for your chat app.</span>
+          <div className="grid grid-cols-3 space-x-4 md:space-x-6 md:flex md:justify-center lg:justify-start">
+            <a aria-label="add to slack" href="#" className="p-4 border border-gray-200 dark:bg-gray-800 dark:border-gray-700 rounded-full duration-300 hover:border-cyan-400 hover:shadow-lg hover:shadow-cyan-600/20 dark:hover:border-cyan-300/30">
+              <div className="flex justify-center space-x-4">
+                <img className="w-6 h-6" src="https://tailus.io/sources/blocks/tech-startup/preview/images/slack.png" alt="slack logo" loading="lazy" width="128" height="128" />
+                <span className="hidden font-medium md:block dark:text-white">Slack</span>
+              </div>
+            </a>    
+            <a aria-label="add to chat" href="#" className="p-4 border border-gray-200 dark:bg-gray-800  dark:border-gray-700 rounded-full duration-300 hover:border-green-400 hover:shadow-lg hover:shadow-lime-600/20 dark:hover:border-green-300/30">
+              <div className="flex justify-center space-x-4">
+                <img className="w-6 h-6" src="https://tailus.io/sources/blocks/tech-startup/preview/images/chat.png" alt="chat logo" loading="lazy" width="128" height="128" />
+                <span className="hidden font-medium md:block dark:text-white">Google Chat</span>
+              </div>
+            </a>   
+            <a aria-label="add to zoom" href="#" className="p-4 border border-gray-200 dark:bg-gray-800  dark:border-gray-700 rounded-full duration-300 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-600/20 dark:hover:border-blue-300/30">
+              <div className="flex justify-center space-x-4">
+                <img className="w-6 h-6" src="https://tailus.io/sources/blocks/tech-startup/preview/images/zoom.png" alt="chat logo" loading="lazy" width="128" height="128" />
+                <span className="hidden font-medium md:block dark:text-white">Zoom</span>
+              </div>
+            </a>    
+          </div>
+          <div className="dark:text-gray-300">
+            🔥🌟 
+            <span>Other integrations :</span> 
+            <a href="#" className="font-semibold text-gray-700 dark:text-gray-200">Discord,</a>
+            <a href="#" className="font-semibold text-gray-700 dark:text-gray-200">Telegram</a>
+          </div>
+          <div className="pt-12 flex gap-6 lg:gap-12 justify-between grayscale lg:w-2/3">
+            <img src="https://tailus.io/sources/blocks/tech-startup/preview/images/clients/airbnb.svg" className="h-8 sm:h-10 w-auto lg:h-12" alt="" />
+            <img src="https://tailus.io/sources/blocks/tech-startup/preview/images/clients/ge.svg" className="h-8 sm:h-10 w-auto lg:h-12" alt="" />
+            <img src="https://tailus.io/sources/blocks/tech-startup/preview/images/clients/coty.svg" className="h-8 sm:h-10 w-auto lg:h-12" alt="" />
+            <img src="https://tailus.io/sources/blocks/tech-startup/preview/images/clients/microsoft.svg" className="h-8 sm:h-10 w-auto lg:h-12" alt="" />
+          </div>
+        </header>
+        <section className="lg:flex">
+          <div className="relative mt-8 md:mt-16 space-y-8 sm:w-10/12 md:w-2/3 lg:ml-0 sm:mx-auto text-center lg:text-left lg:mr-auto lg:w-7/12">
+            {/* Main content */}
+          </div>
+          <div className="mt-12 md:mt-0 lg:absolute -right-10 lg:w-7/12">
+            <div className="relative w-full">
+              <div aria-hidden="true" className="absolute scale-75 md:scale-110 inset-0 m-auto w-full h-full md:w-96 md:h-96 rounded-full rotate-45 bg-gradient-to-r from-sky-500 to-cyan-300 blur-3xl"></div>
+              <img src="https://tailus.io/sources/blocks/tech-startup/preview/images/globalization-cuate.svg" className="relative w-full" alt="wath illustration" loading="lazy" width="320" height="280" />
             </div>
+          </div>
+        </section>
+      </div>
+    </div>
         </>
     );
 };
