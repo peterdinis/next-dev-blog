@@ -10,8 +10,6 @@ import ScrollToTop from 'react-scroll-to-top';
 
 import { FrontdPostMapping } from '@/types/postTypes';
 
-import FrontPostCard from './FrontPostCard';
-
 const AllPostsWrapper: FC = () => {
     const [frontPosts, setFrontPosts] = useState<FrontdPostMapping[]>([]);
     const [loading, setLoading] = useState(false);
@@ -114,24 +112,6 @@ const AllPostsWrapper: FC = () => {
                         </div>
                     </div>
                 </div>
-                {/*  <div className='flex-col items-center justify-center  px-4'>
-                    
-                    <div className='2xl:container 2xl:mx-auto flex flex-wrap items-start justify-center pt-6 gap-6'>
-                        
-                        {frontPosts &&
-                            loading === false &&
-                            frontPosts.map((item: FrontdPostMapping) => (
-                                <div className='flex lg:flex-col sm:flex-row flex-col items-start lg:gap-0 gap-6 lg:w-96 w-auto'>
-                                    
-                                    <FrontPostCard
-                                        id={item.id}
-                                        title={item.title}
-                                        tag={item.tag}
-                                    />
-                                </div>
-                            ))}
-                    </div>
-                </div> */}
             </div>
             <ScrollToTop smooth={true} />
         </>
