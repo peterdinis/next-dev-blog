@@ -49,14 +49,13 @@ const LoginComponent: FC = () => {
                 password: formData.password,
             });
             if (error) {
-                console.log(error);
+                toast({
+                    variant: 'default',
+                    duration: 2000,
+                    className: 'bg-red-300',
+                    title: error as unknown as string
+                });
             }
-            toast({
-                variant: 'default',
-                duration: 2000,
-                className: 'bg-green-300',
-                title: 'Successfully login to app',
-            });
             router.push('/profile');
         } catch (err) {
             toast({
